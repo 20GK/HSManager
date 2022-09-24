@@ -1,29 +1,25 @@
-const { BrowserWindow, app} = require('electron');
+const { BrowserWindow, app, ipcMain} = require('electron');
 const path = require('path');
+const ipc = ipcMain;
 
 function createWindow() {
     const win = new BrowserWindow({
-        minWidth: 1200,
         width: 1200,
-        maxWidth:1200,
-
-        minHeight:800,
         height: 800,
-        maxHeight: 800,
-
+        minWidth: 1200,
+        minHeight: 800,
         frame: false,
-        backgroundColor:"#282c34",
         webPreferences: {
             nodeIntegration: false,
-            devTools: true,
             contextIsolation: true,
-            preload: path.join(__dirname, 'preload.js')
+            devTools: true,
         }
     })
     win.removeMenu()
-    win.loadFile('index.html')
+    //win.loadFile('index.html')
+    win.loadURL("http://127.0.0.1:3000/index.html")
+    win.setBackgroundColor("#343B48")
 }
-
 
 require('electron-reload')(__dirname, {
     Electron: path.join(__dirname, 'node_module', '.bin', 'electron')
@@ -37,10 +33,4 @@ app.whenReady().then(() => {
             createWindow()
         }
     })
-})
-
-app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') {
-        app.quit()
-    }
 })

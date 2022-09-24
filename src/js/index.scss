@@ -1,358 +1,150 @@
 @import url('https://fonts.googleapis.com/css?family=Inter:700');
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 10pt;
+    font-family: "Inter";
+    color: #949AA7;
+    background-color: #2C313C;
+}
 
-.screen a {
-  display: contents;
-  text-decoration: none;
+/*App Base */
+.mainApp{
+    display: flexbox;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid #343B48;
+    -webkit-box-sizing: border-box;
+}
+
+.mainApp > .topBar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 5%;
+    border-bottom: 3px solid #343B48;
+    background-color: #1B1D23;
+    -webkit-user-select: none;
+}
+
+.topBar > .titlebar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.topBar > .titlebar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.titlebar > .toggleButton {
+    width: 45px;
+    height: 40px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    background-image: url('/src/images/menu\ \(1\).png');
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.titlebar > .toggleButton:hover {
+    background-color: #272C36;
+}
+
+.titlebar > .toggleButton:active {
+    background-color: #4F9FEE;
+}
+
+.titlebar > img {
+    margin-left: 10 px;
+}
+
+.titlebar > .title {
+    margin-left: 10px;
+    width: 100%;
+    line-height: 30px;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    -webkit-app-region: drag;
+}
+
+.topBar > .titleBarBtns {
+    display: flex;
+    flex-direction: row;
+    width: 120px;
+    height: 40px;
+}
+
+.titleBarBtns > .topBtn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.titleBarBtns > .topBtn:hover {
+    background-color: #272C36;
+}
+
+.titleBarBtns > .topBtn:active {
+    background-color: #4F9FEE;
+}
+
+.titleBarBtns > .minimizeBtn {
+    background-image: url("/src/images/stop\ \(1\).png");
+}
+
+.titleBarBtns > .maximizeBtn {
+    background-image: url("/src/images/screenshot\ \(1\).png");
+}
+
+.titleBarBtns > .restoreBtn {
+    background-image: url("/src/images/down-arrow\ \(1\).png");
+}
+
+.titleBarBtns > .closeBtn {
+    background-image: url("/src/images/cancel\ \(1\).png");
 }
 
 
 
 
 
-//--------//
-//Tab View//
-//--------//
-.tab-view {
-  align-items: flex-start;
-  display: flex;
-  margin-left: 2px;
-  min-width: 1202px;
+
+
+
+.mainApp > .contentArea {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
 }
 
-.tab-container {
-  align-items: center;
-  background-size: 100% 100%;
-  display: flex;
-  height: 26px;
-  justify-content: flex-end;
-  min-width: 1200px;
-  padding: 1.1px 8px;
-  
+.contentArea > .leftMenu {
+    width: 280px;
+    height: 100%;
+    background-color: #272C36;
+    transition: 0.4s;
 }
 
-
-.tab-title-app {
-  align-self: flex-end;
-  color: rgba(205, 205, 205, 1);
-  font-family: "Inter";
-  font-size: 20px;
-  font-weight: 700;
-  height: 23px;
-  letter-spacing: 0;
-  text-align: center;
-  width: 78px;
-}
-
-.tab-button-hide {
-  background-color: #a3d06b;
-  border: 1px none;
-  border-radius: 80px;
-  height: 13px;
-  margin-left: 466px;
-  margin-top: 1px;
-  width: 19px;
-}
-
-.tab-button-resize {
-  background-color: rgba(223, 162, 70, 1);
-  border: 1px none;
-  border-radius: 80px;
-  height: 13px;
-  margin-left: 6px;
-  margin-top: 1px;
-  width: 19px;
-}
-
-.tab-button-close {
-  background-color: #d05353;
-  border: 1px none;
-  border-radius: 80px;
-  height: 13px;
-  margin-left: 6px;
-  margin-top: 1px;
-  width: 19px;
-}
-
-
-
-
-
-//---------//
-//Main View//
-//----- ---//
-.mainview {
-  align-items: flex-start;
-  display: flex;
-  margin-right: 1px;
-  margin-top: 9px;
-  min-width: 1185px;
-}
-
-.desktopView {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  pointer-events: none;
-  width: 100%;
-}
-
-.desktopView > * {
-  flex-shrink: 0;
-  pointer-events: auto;
-}
-
-.desktopView-1 {
-  align-items: center;
-  background-color: #282c34;
-  border: 1px none;
-  display: flex;
-  flex-direction: column;
-  height: 800px;
-  overflow: hidden;
-  width: 1200px;
-}
-
-
-
-
-
-//----------------//
-//Additionals View//
-//----------------//
-
-
-.additionalsView {
-  align-items: flex-end;
-  background-color: 100% 100%;
-  display: flex;
-  flex-direction: column;
-  margin-left: -4px;
-  min-height: 174px;
-  padding: 7px 8px;
-  width: 86px;
-}
-
-.app-icon {
-  align-self: center;
-  height: 64px;
-  object-fit: cover;
-  width: 68px;
-}
-
-.delegate {
-  background-color: rgba(205, 205, 205, 1);
-  border: 1px none;
-  border-radius: 15px;
-  height: 5px;
-  margin-top: 3px;
-  width: 69px;
-}
-
-
-.container-App-Upper {
-  align-items: flex-start;
-  display: flex;
-  margin-right: 7px;
-  margin-top: 14px;
-  min-width: 55px;
-}
-
-.integrate-app-red {
-  background-color: #ee565f;
-  border: 1px none;
-  border-radius: 5px;
-  box-shadow: 0px 4px 4px #00000040;
-  height: 25px;
-  width: 25px;
-}
-
-.integrate-app-green {
-  background-color: #88ae63;
-  border: 1px none;
-  border-radius: 5px;
-  box-shadow: 0px 4px 4px #00000040;
-  height: 25px;
-  margin-left: 5px;
-  width: 25px;
-}
-
-.container-App-Bottom {
-  align-items: flex-start;
-  display: flex;
-  margin-right: 7px;
-  margin-top: 7px; 
-  min-width: 55px;
-}
-
-.integrate-app-blue {
-  background-color: #5b60e0;
-  border: 1px none;
-  border-radius: 5px;
-  box-shadow: 0px 4px 4px #00000040;
-  height: 25px;
-  width: 25px;
-}
-
-.integrate-app-yellow {
-  background-color: #e19e1b;
-  border: 1px none;
-  border-radius: 5px;
-  box-shadow: 0px 4px 4px #00000040;
-  height: 25px;
-  margin-left: 5px;
-  width: 25px;
-}
-
-
-
-
-
-//------------//
-//PROFILE SCSS//
-//------------//
-
-
-.overlap-profile {
-  align-items: flex-start;
-  background-color: rgba(48, 53, 63, 1);
-  border-radius: 20px;
-  box-shadow: 0px 4px 4px #00000040;
-  display: flex;
-  height: 756px;
-  margin-left: 4px;
-  min-width: 1099px;
-  padding: 5px 8px;
-}
-
-.overlap-profile-flex {
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-  min-height: 744px;
-  width: 553px;
-}
-
-.overlap-profile-container {
-  align-items: flex-start;
-  display: flex; 
-  min-width: 553px;
-}
-
-.overlap-profile-2 {
-  height: 386px;
-  position: relative;
-  width: 224px;
-}
-
-.background {
-  background-color: rgba(55, 61, 72, 1);
-  border: 1px none;
-  border-radius: 20px;
-  box-shadow: 0px 4px 4px #00000040;
-  height: 384px;
-  left: 0;
-  position: absolute;
-  top: 2px;
-  width: 210px;
-}
-
-.profile-icon {
-  background-color: rgba(170, 143, 143, 1);
-  border: 1px none;
-  border-radius: 28px 28px 10px 28px;
-  height: 150px;
-  left: 29px;
-  position: absolute;
-  top: 53px;
-  width: 150px;
-}
-
-.profile-nickname {
-  color: rgb(205, 205, 205);
-  font-family: "Inter";
-  font-size: 28px;
-  font-weight: 700;
-  height: 34px;
-  left: 42px;
-  letter-spacing: 0;
-  position: absolute;
-  text-align: center;
-  top: 207px;
-  width: 124px;
-}
-
-.profile-tag {
-  color: #5f5f5f;
-  font-family: "Inter";
-  font-size: 16px;
-  font-weight: 700;
-  height: 19px;
-  left: 42px;
-  letter-spacing: 0;
-  position: absolute;
-  text-align: center;
-  top: 242px;
-  width: 124px;
-}
-
-.profile-online {
-  background-color: rgba(157, 213, 113, 1);
-  border: 1px none;
-  border-radius: 10px;
-  height: 31px;
-  left: 148px;
-  position: absolute;
-  top: 172px;
-  width: 31px;
-}
-
-.profile-note-area {
-  background-color: rgba(48, 53, 63, 1);
-  border: 1px none;
-  border-radius: 14px;
-  height: 98px;
-  left: 7px;
-  position: absolute;
-  top: 275px;
-  width: 194px;
-}
-
-.profile-note-title {
-  color: #dadada;
-  font-family: "Inter";
-  font-size: 16px;
-  font-weight: 700;
-  height: 19px;
-  left: 14px;
-  letter-spacing: 0;
-  position: absolute;
-  top: 281px;
-  width: 210px;
-}
-
-.title {
-  color: rgb(255, 255, 255);
-  font-family: "Inter";
-  font-size: 40px;
-  font-weight: 700;
-  height: 48px;
-  left: 43px;
-  letter-spacing: 0;
-  position: absolute;
-  top: 0px;
-}
-
-
-
-
-
-//------------//
-//---Plugins--//
-//------------//
-
-
-.valign-text-middle {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.contentArea > .contentPages {
+    width: 100%;
+    height: 100%;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    display: -webkit-box;
 }
