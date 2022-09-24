@@ -2,7 +2,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-size: 15pt;
+  font-size: 20pt;
   font-family: "Inter";
   color: #e1e1e1;
   background-color: #2C313C;
@@ -21,12 +21,15 @@ html, body {
 }
 
 .mainApp > .topBar {
-  display: flex;
-  flex-direction: row;
+  min-width: auto;
+  box-shadow: 0px 4px 4px #00000050;
   width: 100%;
-  height: 5%;
-  border-bottom: 3px solid #343B48;
-  background-color: #1B1D23;
+  z-index: 5050;
+  height: 45px;
+  display: flex;
+  border-top: 50px;
+  position: relative;
+  align-items: center;
   -webkit-user-select: none;
 }
 
@@ -44,12 +47,12 @@ html, body {
 }
 
 .titlebar > .toggleButton {
-  width: 45px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border: none;
   outline: none;
   background-color: transparent;
-  background-image: url("/src/images/menu (1).png");
+  background-image: url("/src/images/grid.png");
   background-repeat: no-repeat;
   background-position: center;
   transition: 0.2s;
@@ -105,11 +108,11 @@ html, body {
 }
 
 .titleBarBtns > .minimizeBtn {
-  background-image: url("/src/images/stop (1).png");
+  background-image: url("/src/images/minimize.png");
 }
 
 .titleBarBtns > .maximizeBtn {
-  background-image: url("/src/images/screenshot (1).png");
+  background-image: url("/src/images/maximize.png");
 }
 
 .titleBarBtns > .restoreBtn {
