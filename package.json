@@ -2,7 +2,7 @@
   "name": "hsmanager",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "./src/js/main.js",
   "scripts": {
     "start": "electron ."
   },
@@ -12,8 +12,6 @@
     "electron": "^20.2.0"
   },
   "devDependencies": {
-    "electron-reload": "^2.0.0-alpha.1",
-    "sass": "^1.55.0",
-    "sass-loader": "^13.0.2"
+    "electron-reload": "^2.0.0-alpha.1"
   }
 }

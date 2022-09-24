@@ -1,9 +1,12 @@
 const { BrowserWindow, app, ipcMain} = require('electron');
 const path = require('path');
+const url = require('url')
 const ipc = ipcMain;
 
+let win
+
 function createWindow() {
-    const win = new BrowserWindow({
+    win = new BrowserWindow({
         width: 1200,
         height: 800,
         minWidth: 960,
@@ -16,12 +19,31 @@ function createWindow() {
         }
     })
     win.removeMenu()
-    //win.loadFile('index.html')
-    win.loadURL("http://127.0.0.1:3000/index.html")
+    win.loadFile('index.html')
+    //win.loadURL("http://127.0.0.1:3000/index.html")
     win.setBackgroundColor("#343B48")
 
-    //
+    win.loadURL(url.format({
+        pathname: "./src/dist/index.html",
+        protocolL: 'file:',
+        slashes: true
+    }))
+
+    //win.webContents.openDevTools()
     
+
+
+
+
+
+
+
+
+
+
+
+
+    //
     ipc.on('maxResBtn', ()=>{
         if(win.isMaximized()) {
             console.log('Clicked on Restore')

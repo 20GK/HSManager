@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Inter:700");
 @import url("https://fonts.googleapis.com/css2?family=Istok+Web&display=swap");
-html, body {
+
+html,
+body {
   margin: 0;
   padding: 0;
   font-size: 24pt;
@@ -16,7 +18,7 @@ html, body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  border: 1px solid #343B48;
+  border: 1px solid #343b48;
   -webkit-box-sizing: border-box;
 }
 
@@ -53,7 +55,7 @@ html, body {
   border: none;
   outline: none;
   background-color: transparent;
-  background-image: url("/src/images/grid.png");
+  background-image: url("/src/images/Menu-Icon.png");
   background-repeat: no-repeat;
   background-position: center;
   transition: 0.2s;
@@ -61,26 +63,26 @@ html, body {
 }
 
 .titlebar > .toggleButton:hover {
-  background-color: #272C36;
+  background-color: #272c36;
 }
 
 .titlebar > .toggleButton:active {
-  background-color: #4F9FEE;
+  background-color: #4f9fee;
 }
 
 .titlebar > img {
   margin-left: 10 px;
 }
 
-.titlebar > .title {
+.titlebar > .titleApp {
   margin-left: 5px;
   width: 100%;
   line-height: 30px;
   margin-top: 10px;
   padding-bottom: 5px;
   -webkit-app-region: drag;
-  background: #70FFFA;
-  background: linear-gradient(to top left, #70FFFA 53%, #0173ffc6 100%);
+  background: #70fffa;
+  background: linear-gradient(to top left, #70fffa 65%, #0173ffc6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -105,27 +107,27 @@ html, body {
 }
 
 .titleBarBtns > .topBtn:hover {
-  background-color: #272C36;
+  background-color: #272c36;
 }
 
 .titleBarBtns > .topBtn:active {
-  background-color: #4F9FEE;
+  background-color: #4f9fee;
 }
 
 .titleBarBtns > .minimizeBtn {
-  background-image: url("/src/images/Frame\ 1.png");
+  background-image: url("/src/images/Minimize-Icon.png");
 }
 
 .titleBarBtns > .maximizeBtn {
-  background-image: url("/src/images/Frame\ 2.png");
+  background-image: url("/src/images/Maximize-Icon.png");
 }
 
 .titleBarBtns > .restoreBtn {
-  background-image: url("/src/images/Frame\ 3.png");
+  background-image: url("/src/images/Restore-Icon.png");
 }
 
 .titleBarBtns > .closeBtn {
-  background-image: url("/src/images/Frame\ 4.png");
+  background-image: url("/src/images/Close-Icon.png");
 }
 
 .mainApp > .contentArea {
@@ -135,9 +137,11 @@ html, body {
   height: 100%;
 }
 
-.contentArea > .leftMenu {
+.contentArea > .sideBar {
+  position: fixed;
   width: 0px;
   height: 100%;
+  max-width: 220px;
   background-color: #232935;
   box-shadow: 0px 4px 4px #00000050;
   transition: 0.4s;
@@ -149,6 +153,51 @@ html, body {
   -webkit-box-align: center;
   -webkit-box-pack: center;
   display: -webkit-box;
+}
+
+
+
+
+.nav {
+  list-style-type: none;
+  opacity: 0;
+  color: white;
+  margin-top: 40;
+  transition: 0.4s;
+  position: fixed;
+}
+
+.exitContainer {
+  position: fixed;
+  bottom: 0;
+}
+
+.settingsContainer {
+  position: fixed;
+  bottom: 50;
+}
+
+.navLarge {
+  font-size: 15px;
+}
+
+.navSmall {
+  font-size: 13px;
+  color: #858585;
+}
+
+a {
+  position: relative;
+  display: block;
+  top: -37px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 0px;
+  margin-right: 0px;
+  text-decoration: none;
+  font-family: "Inter";
+  font-weight: 100;
+  
 }
 
 /*# sourceMappingURL=index.css.map */

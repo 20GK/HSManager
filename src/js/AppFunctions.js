@@ -1,8 +1,8 @@
 const { ipcRenderer } = require('electron')
 const maxResBtn = document.getElementById('maxResBtn')
+const sidebar = document.getElementById('sideBar')
+const contentsSideBar1 = document.getElementById('containerAnim')
 ipc = ipcRenderer;
-
-const mySidebar = document.getElementById('mySidebar')
 let isLeftMenuActive = false
 
 closeBtn.addEventListener('click', ()=> {
@@ -34,10 +34,14 @@ maxResBtn.addEventListener('click', ()=> {
 
 showHideMenus.addEventListener('click', ()=> {
     if(isLeftMenuActive) {
-        mySidebar.style.width = '0px'
+        sidebar.style.width = '0px'
+        contentsSideBar1.style.opacity = '0'
         isLeftMenuActive = false
+        console.log('click')
     } else {
-        mySidebar.style.width = '180px'
+        sidebar.style.width = '220px'
+        contentsSideBar1.style.opacity = '1'
         isLeftMenuActive = true
+        console.log('click')
     }
 })
