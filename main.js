@@ -10,8 +10,8 @@ function createWindow() {
         minHeight: 650,
         frame: false,
         webPreferences: {
-            nodeIntegration: false,
-            contextIsolation: true,
+            nodeIntegration: true,
+            contextIsolation: false,
             devTools: true,
         }
     })
@@ -19,6 +19,35 @@ function createWindow() {
     //win.loadFile('index.html')
     win.loadURL("http://127.0.0.1:3000/index.html")
     win.setBackgroundColor("#343B48")
+
+    //
+    
+    ipc.on('maxResBtn', ()=>{
+        if(win.isMaximized()) {
+            console.log('Clicked on Restore')
+            win.restore()
+        } else {
+            win.maximize()
+        }
+    })
+
+    win.on('maximize', ()=>{
+        win.webContents.send('isMaximized')
+    })
+    win.on('unmaximize', ()=>{
+        win.webContents.send('isRestored')
+    })
+
+
+    ipc.on('minimizeApp', ()=>{
+        console.log('Clicked on MinBtn')
+        win.minimize()
+    })
+
+    ipc.on('closeApp', ()=>{
+        console.log('Clicked on ClsBtn')
+        win.close()
+    })
 }
 
 require('electron-reload')(__dirname, {

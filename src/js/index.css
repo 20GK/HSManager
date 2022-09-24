@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Inter:700");
+@import url("https://fonts.googleapis.com/css2?family=Istok+Web&display=swap");
 html, body {
   margin: 0;
   padding: 0;
-  font-size: 20pt;
-  font-family: "Inter";
-  color: #e1e1e1;
-  background-color: #2C313C;
+  font-size: 24pt;
+  font-family: "Istok Web";
+  background-color: #262c39;
 }
 
 /*App Base */
@@ -23,6 +23,7 @@ html, body {
 .mainApp > .topBar {
   min-width: auto;
   box-shadow: 0px 4px 4px #00000050;
+  background-color: #22252e;
   width: 100%;
   z-index: 5050;
   height: 45px;
@@ -72,12 +73,16 @@ html, body {
 }
 
 .titlebar > .title {
-  margin-left: 10px;
+  margin-left: 5px;
   width: 100%;
   line-height: 30px;
-  margin-top: 5px;
+  margin-top: 10px;
   padding-bottom: 5px;
   -webkit-app-region: drag;
+  background: #70FFFA;
+  background: linear-gradient(to top left, #70FFFA 53%, #0173ffc6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .topBar > .titleBarBtns {
@@ -108,19 +113,19 @@ html, body {
 }
 
 .titleBarBtns > .minimizeBtn {
-  background-image: url("/src/images/minimize.png");
+  background-image: url("/src/images/Frame\ 1.png");
 }
 
 .titleBarBtns > .maximizeBtn {
-  background-image: url("/src/images/maximize.png");
+  background-image: url("/src/images/Frame\ 2.png");
 }
 
 .titleBarBtns > .restoreBtn {
-  background-image: url("/src/images/down-arrow (1).png");
+  background-image: url("/src/images/Frame\ 3.png");
 }
 
 .titleBarBtns > .closeBtn {
-  background-image: url("/src/images/cancel (1).png");
+  background-image: url("/src/images/Frame\ 4.png");
 }
 
 .mainApp > .contentArea {
@@ -131,9 +136,10 @@ html, body {
 }
 
 .contentArea > .leftMenu {
-  width: 280px;
+  width: 0px;
   height: 100%;
-  background-color: #272C36;
+  background-color: #232935;
+  box-shadow: 0px 4px 4px #00000050;
   transition: 0.4s;
 }
 
