@@ -9,8 +9,8 @@ function createWindow() {
     win = new BrowserWindow({
         width: 1200,
         height: 800,
-        minWidth: 960,
-        minHeight: 650,
+        //minWidth: 960,
+        //minHeight: 650,
         frame: false,
         webPreferences: {
             nodeIntegration: true,
@@ -19,15 +19,11 @@ function createWindow() {
         }
     })
     win.removeMenu()
-    win.loadFile('index.html')
-    //win.loadURL("http://127.0.0.1:3000/index.html")
+    //win.loadFile('index.html')
+    win.loadURL("http://127.0.0.1:3000/index.html")
     win.setBackgroundColor("#343B48")
 
-    win.loadURL(url.format({
-        pathname: "./src/dist/index.html",
-        protocolL: 'file:',
-        slashes: true
-    }))
+    
 
     //win.webContents.openDevTools()
     

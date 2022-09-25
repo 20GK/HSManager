@@ -55,7 +55,7 @@ body {
   border: none;
   outline: none;
   background-color: transparent;
-  background-image: url("/src/images/Menu-Icon.png");
+  background-image: url("./src/images/Menu-Icon.png");
   background-repeat: no-repeat;
   background-position: center;
   transition: 0.2s;
@@ -115,19 +115,19 @@ body {
 }
 
 .titleBarBtns > .minimizeBtn {
-  background-image: url("/src/images/Minimize-Icon.png");
+  background-image: url("./src/images/Minimize-Icon.png");
 }
 
 .titleBarBtns > .maximizeBtn {
-  background-image: url("/src/images/Maximize-Icon.png");
+  background-image: url("./src/images/Maximize-Icon.png");
 }
 
 .titleBarBtns > .restoreBtn {
-  background-image: url("/src/images/Restore-Icon.png");
+  background-image: url("./src/images/Restore-Icon.png");
 }
 
 .titleBarBtns > .closeBtn {
-  background-image: url("/src/images/Close-Icon.png");
+  background-image: url("./src/images/Close-Icon.png");
 }
 
 .mainApp > .contentArea {

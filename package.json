@@ -1,17 +1,50 @@
 {
   "name": "hsmanager",
-  "version": "1.0.0",
+  "version": "2.2.0",
   "description": "",
-  "main": "./src/js/main.js",
+  "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "author": "20GK",
-  "license": "ISC",
-  "dependencies": {
-    "electron": "^20.2.0"
-  },
+  "license": "MIT",
   "devDependencies": {
+    "electron": "^20.2.0",
+    "electron-builder": "^23.3.3"
+  },
+  "dependencies": {
     "electron-reload": "^2.0.0-alpha.1"
+  },
+  "build": {
+    "directories": {
+      "buildResources": "*"
+    },
+    "files": [
+      "./src/images/*.png",
+      "./src/images/*.svg",
+      "./src/logos/*.png",
+      "./src/logos/*.ico",
+      "./src/logos/*.svg",
+      "index.html",
+      "index.css",
+      "AppFunction.js",
+      "node_modules",
+      "package.json",
+      "package-lock.json",
+      "main.js"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
   }
 }
